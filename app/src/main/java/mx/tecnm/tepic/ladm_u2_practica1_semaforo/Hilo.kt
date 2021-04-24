@@ -9,13 +9,22 @@ class Hilo(c:Lienzo,carro:Int):Thread(){
     override fun run() {
         when(car){
             1 -> {
-
+                while (true){
+                    if (posCar1>-600F) posCar1-=1F
+                    if (posCar1<=-600F) {
+                        posCar1 = 2600F
+                        temp=(1..15).random()
+                    }
+                    Log.d("Posx", posCar1.toString()+"-Temp: "+temp)
+                    canvas.invalidate()
+                    sleep(temp.toLong())
+                }
             }
             2 -> {
                 while (true){
                     if (posCar2<1080F) posCar2+=1F
                     if (posCar2>=1080F) {
-                        posCar2 = -200F
+                        posCar2 = -600F
                         temp=(1..15).random()
                     }
                     Log.d("Posx", posCar2.toString()+"-Temp: "+temp)
@@ -24,10 +33,28 @@ class Hilo(c:Lienzo,carro:Int):Thread(){
                 }
             }
             3 -> {
-
+                while (true){
+                    if (posCar3<2500F) posCar3+=1F
+                    if (posCar3>=2500F) {
+                        posCar3 = -600F
+                        temp=(1..15).random()
+                    }
+                    Log.d("Posx", posCar3.toString()+"-Temp: "+temp)
+                    canvas.invalidate()
+                    sleep(temp.toLong())
+                }
             }
             4 -> {
-
+                while (true){
+                    if (posCar4>-600F) posCar4-=1F
+                    if (posCar4<=-600F) {
+                        posCar4 = 1280F
+                        temp=(1..15).random()
+                    }
+                    Log.d("Posx", posCar4.toString()+"-Temp: "+temp)
+                    canvas.invalidate()
+                    sleep(temp.toLong())
+                }
             }
             5-> {
                 //rojo encendido = #EA3C28 Ap= #9D281A
