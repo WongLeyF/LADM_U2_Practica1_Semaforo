@@ -2,21 +2,14 @@ package mx.tecnm.tepic.ladm_u2_practica1_semaforo
 
 import android.graphics.*
 import android.view.View
-var posCar1:Float = 2600F
-var posCar2:Float = -600F
-var posCar3:Float = -600F
-var posCar4:Float = 1280F
-var semSup = arrayOf("#9D281A", "#B0A121", "#6DEF14")
-var semInf = arrayOf("#EA3C28", "#B0A121", "#4AA20D")
-
 
 class Lienzo(p: MainActivity): View(p)
 {
 
-    var car1 = BitmapFactory.decodeResource(this.resources, R.drawable.carro1)
-    var car2 = BitmapFactory.decodeResource(this.resources, R.drawable.carro2)
-    var car3 = BitmapFactory.decodeResource(this.resources, R.drawable.carro3)
-    var car4 = BitmapFactory.decodeResource(this.resources, R.drawable.carro4)
+    var car1: Bitmap = BitmapFactory.decodeResource(this.resources, R.drawable.carro1)
+    var car2: Bitmap = BitmapFactory.decodeResource(this.resources, R.drawable.carro2)
+    var car3: Bitmap = BitmapFactory.decodeResource(this.resources, R.drawable.carro3)
+    var car4: Bitmap = BitmapFactory.decodeResource(this.resources, R.drawable.carro4)
 
     //rojo encendido = #EA3C28 Ap= #9D281A
     //amarillo enc = #FDE730 Ap = #B0A121
@@ -86,6 +79,5 @@ class Lienzo(p: MainActivity): View(p)
         canvas.drawBitmap(car2,posCar2,1020F,p)
         canvas.drawBitmap(car3,280F, posCar3,p)
         canvas.drawBitmap(car4, posCar4,750F,p)
-
     }
 }
