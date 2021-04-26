@@ -1,6 +1,10 @@
 package mx.tecnm.tepic.ladm_u2_practica1_semaforo
 
 class Semaforo (c:Lienzo):Thread(){
+    //       ------Colores------
+    //rojo encendido = #EA3C28 Ap= #9D281A
+    //verde encendido = #6DEF14 Ap= #4AA20D
+    //amarillo enc = #FDE730 Ap = #B0A121
 
     val canvas:Lienzo = c
     override fun run() {
@@ -9,7 +13,6 @@ class Semaforo (c:Lienzo):Thread(){
             sigaInf()
             amarillo()
             sigaSup()
-
         }
     }
     private fun amarillo(){
@@ -23,7 +26,7 @@ class Semaforo (c:Lienzo):Thread(){
         canvas.invalidate()
         sleep(2000)
     }
-    private fun sigaInf(){//Carro 1,3
+    private fun sigaInf(){//Carro 2,4
         semSup[0] = "#EA3C28"
         semSup[1] = "#B0A121"
         semSup[2] = "#4AA20D"
@@ -32,13 +35,10 @@ class Semaforo (c:Lienzo):Thread(){
         semInf[1] = "#B0A121"
         semInf[2] = "#6DEF14"
         canvas.invalidate()
-        semaforo = false
+        semaforo = true
         sleep(8500)
     }
-    private fun sigaSup(){//Carro 2,4
-        //rojo encendido = #EA3C28 Ap= #9D281A
-        //verde encendido = #6DEF14 Ap= #4AA20D
-        //amarillo enc = #FDE730 Ap = #B0A121
+    private fun sigaSup(){//Carro 1,3
         semSup[0] = "#9D281A"
         semSup[1] = "#B0A121"
         semSup[2] = "#6DEF14"
@@ -47,7 +47,7 @@ class Semaforo (c:Lienzo):Thread(){
         semInf[1] = "#B0A121"
         semInf[2] = "#4AA20D"
         canvas.invalidate()
-        semaforo = true
+        semaforo = false
         sleep(8500)
     }
 }

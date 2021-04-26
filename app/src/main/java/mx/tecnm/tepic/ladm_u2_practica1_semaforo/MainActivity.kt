@@ -5,6 +5,15 @@ import android.os.Bundle
 import android.util.Log
 import java.lang.Exception
 
+//Global variables
+var posCar1:Float = 2600F
+var posCar2:Float = -600F
+var posCar3:Float = -600F
+var posCar4:Float = 1280F
+var semSup = arrayOf("#9D281A", "#B0A121", "#6DEF14")
+var semInf = arrayOf("#EA3C28", "#B0A121", "#4AA20D")
+var semaforo=true
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +29,5 @@ class MainActivity : AppCompatActivity() {
             hilo3.start()
             hilo4.start()
             hilo5.start()
-        //
     }
 }
